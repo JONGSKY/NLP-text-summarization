@@ -1,4 +1,4 @@
-# NLP_text_summarization
+# NLP Text Summarization
 한국어 기사 요약
 
 ## 정리
