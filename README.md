@@ -47,3 +47,9 @@
     - [복사 방법론과 입력 추가 구조를 이용한 End-to-End 한국어 문서요약](http://kiise.or.kr/e_journal/2017/5/JOK/pdf/08.pdf)
     - [Get To The Point: Summarization with Pointer-Generator Networks](https://arxiv.org/abs/1704.04368)
       - [카카오AI리포트-참고](https://brunch.co.kr/@kakao-it/139)
+      
+      
+- 관련데이터
+  - [문서요약 텍스트 AI데이터](https://aihub.or.kr/aidata/8054)
+      
+      
