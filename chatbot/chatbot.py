@@ -5,21 +5,30 @@ import pandas as pd
 
 data = pd.read_csv('chatbot_data/20201008-19.csv')
 
-data_list = []
-for i in range(len(data[data['news_type'] == "today_main_news"])):
-    data_dict = {}
+news_type_list = ['today_main_news', 'section_politics', 'section_economy', 'section_society','section_life','section_world','section_it']
 
-    title = data[data['news_type'] == "today_main_news"].loc[i].title
-    description = data[data['news_type'] == "today_main_news"].loc[i].summarisation
-    imageUrl = data[data['news_type'] == "today_main_news"].loc[i].image_url
-    webLinkUrl = data[data['news_type'] == "today_main_news"].loc[i].news_url
+all_data_dict = {}
 
-    data_dict['title'] = title
-    data_dict['description'] = description
-    data_dict['thumbnail'] = {"imageUrl":imageUrl}
-    data_dict['buttons'] = [{"action":  "webLink", "label": "뉴스기사 보러가기", "webLinkUrl": webLinkUrl}]
-    
-    data_list.append(data_dict)
+for news_type in news_type_list:
+    data_list = []
+    for i in range(len(data[data['news_type'] == news_type])):
+        data_dict = {}
+
+        reset_df = data[data['news_type'] == news_type].reset_index(drop=True)
+        
+        title = reset_df.loc[i].title
+        description = reset_df.loc[i].summarisation
+        imageUrl = reset_df.loc[i].image_url
+        webLinkUrl = reset_df.loc[i].news_url
+
+        data_dict['title'] = title
+        data_dict['description'] = description
+        data_dict['thumbnail'] = {"imageUrl":imageUrl}
+        data_dict['buttons'] = [{"action":  "webLink", "label": "뉴스기사 보러가기", "webLinkUrl": webLinkUrl}]
+        
+        data_list.append(data_dict)
+
+    all_data_dict[news_type] = data_list    
 
 @app.route('/keyboard')
 def Keyboard():
@@ -43,7 +52,7 @@ def Message():
                     {
                         "carousel": {
                             "type": "basicCard",
-                            "items": data_list
+                            "items": all_data_dict['today_main_news']
                         }
                     }
                 ]
@@ -57,50 +66,7 @@ def Message():
                     {
                         "carousel": {
                             "type": "basicCard",
-                            "items": [
-                                {
-                                    "title": "뉴스기사 제목",
-                                    "description": "뉴스기사 요약 3줄",
-                                    "thumbnail": {
-                                        "imageUrl": "https://imgnews.pstatic.net/image/081/2020/10/07/0003129476_001_20201007151624533.jpg?type=w647"
-                                    },
-                                    "buttons": [
-                                        {
-                                            "action":  "webLink",
-                                            "label": "뉴스기사 보러가기",
-                                            "webLinkUrl": "https://news.naver.com/main/read.nhn?mode=LSD&mid=shm&sid1=100&oid=081&aid=0003129476"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "title": "뉴스기사 제목",
-                                    "description": "뉴스기사 요약 3줄",
-                                    "thumbnail": {
-                                        "imageUrl": "https://imgnews.pstatic.net/image/081/2020/10/07/0003129476_001_20201007151624533.jpg?type=w647"
-                                    },
-                                    "buttons": [
-                                        {
-                                            "action":  "webLink",
-                                            "label": "뉴스기사 보러가기",
-                                            "webLinkUrl": "https://news.naver.com/main/read.nhn?mode=LSD&mid=shm&sid1=100&oid=081&aid=0003129476"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "title": "뉴스기사 제목",
-                                    "description": "뉴스기사 요약 3줄",
-                                    "thumbnail": {
-                                        "imageUrl": "https://imgnews.pstatic.net/image/081/2020/10/07/0003129476_001_20201007151624533.jpg?type=w647"
-                                    },
-                                    "buttons": [
-                                        {
-                                            "action":  "webLink",
-                                            "label": "뉴스기사 보러가기",
-                                            "webLinkUrl": "https://news.naver.com/main/read.nhn?mode=LSD&mid=shm&sid1=100&oid=081&aid=0003129476"
-                                        }
-                                    ]
-                                }
-                            ]
+                            "items": all_data_dict['section_politics']
                         }
                     }
                 ]
@@ -114,50 +80,7 @@ def Message():
                     {
                         "carousel": {
                             "type": "basicCard",
-                            "items": [
-                                {
-                                    "title": "뉴스기사 제목",
-                                    "description": "뉴스기사 요약 3줄",
-                                    "thumbnail": {
-                                        "imageUrl": "https://imgnews.pstatic.net/image/081/2020/10/07/0003129476_001_20201007151624533.jpg?type=w647"
-                                    },
-                                    "buttons": [
-                                        {
-                                            "action":  "webLink",
-                                            "label": "뉴스기사 보러가기",
-                                            "webLinkUrl": "https://news.naver.com/main/read.nhn?mode=LSD&mid=shm&sid1=100&oid=081&aid=0003129476"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "title": "뉴스기사 제목",
-                                    "description": "뉴스기사 요약 3줄",
-                                    "thumbnail": {
-                                        "imageUrl": "https://imgnews.pstatic.net/image/081/2020/10/07/0003129476_001_20201007151624533.jpg?type=w647"
-                                    },
-                                    "buttons": [
-                                        {
-                                            "action":  "webLink",
-                                            "label": "뉴스기사 보러가기",
-                                            "webLinkUrl": "https://news.naver.com/main/read.nhn?mode=LSD&mid=shm&sid1=100&oid=081&aid=0003129476"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "title": "뉴스기사 제목",
-                                    "description": "뉴스기사 요약 3줄",
-                                    "thumbnail": {
-                                        "imageUrl": "https://imgnews.pstatic.net/image/081/2020/10/07/0003129476_001_20201007151624533.jpg?type=w647"
-                                    },
-                                    "buttons": [
-                                        {
-                                            "action":  "webLink",
-                                            "label": "뉴스기사 보러가기",
-                                            "webLinkUrl": "https://news.naver.com/main/read.nhn?mode=LSD&mid=shm&sid1=100&oid=081&aid=0003129476"
-                                        }
-                                    ]
-                                }
-                            ]
+                            "items": all_data_dict['section_economy']
                         }
                     }
                 ]
@@ -171,50 +94,7 @@ def Message():
                     {
                         "carousel": {
                             "type": "basicCard",
-                            "items": [
-                                {
-                                    "title": "뉴스기사 제목",
-                                    "description": "뉴스기사 요약 3줄",
-                                    "thumbnail": {
-                                        "imageUrl": "https://imgnews.pstatic.net/image/081/2020/10/07/0003129476_001_20201007151624533.jpg?type=w647"
-                                    },
-                                    "buttons": [
-                                        {
-                                            "action":  "webLink",
-                                            "label": "뉴스기사 보러가기",
-                                            "webLinkUrl": "https://news.naver.com/main/read.nhn?mode=LSD&mid=shm&sid1=100&oid=081&aid=0003129476"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "title": "뉴스기사 제목",
-                                    "description": "뉴스기사 요약 3줄",
-                                    "thumbnail": {
-                                        "imageUrl": "https://imgnews.pstatic.net/image/081/2020/10/07/0003129476_001_20201007151624533.jpg?type=w647"
-                                    },
-                                    "buttons": [
-                                        {
-                                            "action":  "webLink",
-                                            "label": "뉴스기사 보러가기",
-                                            "webLinkUrl": "https://news.naver.com/main/read.nhn?mode=LSD&mid=shm&sid1=100&oid=081&aid=0003129476"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "title": "뉴스기사 제목",
-                                    "description": "뉴스기사 요약 3줄",
-                                    "thumbnail": {
-                                        "imageUrl": "https://imgnews.pstatic.net/image/081/2020/10/07/0003129476_001_20201007151624533.jpg?type=w647"
-                                    },
-                                    "buttons": [
-                                        {
-                                            "action":  "webLink",
-                                            "label": "뉴스기사 보러가기",
-                                            "webLinkUrl": "https://news.naver.com/main/read.nhn?mode=LSD&mid=shm&sid1=100&oid=081&aid=0003129476"
-                                        }
-                                    ]
-                                }
-                            ]
+                            "items": all_data_dict['section_society']
                         }
                     }
                 ]
@@ -228,50 +108,7 @@ def Message():
                     {
                         "carousel": {
                             "type": "basicCard",
-                            "items": [
-                                {
-                                    "title": "뉴스기사 제목",
-                                    "description": "뉴스기사 요약 3줄",
-                                    "thumbnail": {
-                                        "imageUrl": "https://imgnews.pstatic.net/image/081/2020/10/07/0003129476_001_20201007151624533.jpg?type=w647"
-                                    },
-                                    "buttons": [
-                                        {
-                                            "action":  "webLink",
-                                            "label": "뉴스기사 보러가기",
-                                            "webLinkUrl": "https://news.naver.com/main/read.nhn?mode=LSD&mid=shm&sid1=100&oid=081&aid=0003129476"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "title": "뉴스기사 제목",
-                                    "description": "뉴스기사 요약 3줄",
-                                    "thumbnail": {
-                                        "imageUrl": "https://imgnews.pstatic.net/image/081/2020/10/07/0003129476_001_20201007151624533.jpg?type=w647"
-                                    },
-                                    "buttons": [
-                                        {
-                                            "action":  "webLink",
-                                            "label": "뉴스기사 보러가기",
-                                            "webLinkUrl": "https://news.naver.com/main/read.nhn?mode=LSD&mid=shm&sid1=100&oid=081&aid=0003129476"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "title": "뉴스기사 제목",
-                                    "description": "뉴스기사 요약 3줄",
-                                    "thumbnail": {
-                                        "imageUrl": "https://imgnews.pstatic.net/image/081/2020/10/07/0003129476_001_20201007151624533.jpg?type=w647"
-                                    },
-                                    "buttons": [
-                                        {
-                                            "action":  "webLink",
-                                            "label": "뉴스기사 보러가기",
-                                            "webLinkUrl": "https://news.naver.com/main/read.nhn?mode=LSD&mid=shm&sid1=100&oid=081&aid=0003129476"
-                                        }
-                                    ]
-                                }
-                            ]
+                            "items": all_data_dict['section_life']
                         }
                     }
                 ]
@@ -285,50 +122,7 @@ def Message():
                     {
                         "carousel": {
                             "type": "basicCard",
-                            "items": [
-                                {
-                                    "title": "뉴스기사 제목",
-                                    "description": "뉴스기사 요약 3줄",
-                                    "thumbnail": {
-                                        "imageUrl": "https://imgnews.pstatic.net/image/081/2020/10/07/0003129476_001_20201007151624533.jpg?type=w647"
-                                    },
-                                    "buttons": [
-                                        {
-                                            "action":  "webLink",
-                                            "label": "뉴스기사 보러가기",
-                                            "webLinkUrl": "https://news.naver.com/main/read.nhn?mode=LSD&mid=shm&sid1=100&oid=081&aid=0003129476"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "title": "뉴스기사 제목",
-                                    "description": "뉴스기사 요약 3줄",
-                                    "thumbnail": {
-                                        "imageUrl": "https://imgnews.pstatic.net/image/081/2020/10/07/0003129476_001_20201007151624533.jpg?type=w647"
-                                    },
-                                    "buttons": [
-                                        {
-                                            "action":  "webLink",
-                                            "label": "뉴스기사 보러가기",
-                                            "webLinkUrl": "https://news.naver.com/main/read.nhn?mode=LSD&mid=shm&sid1=100&oid=081&aid=0003129476"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "title": "뉴스기사 제목",
-                                    "description": "뉴스기사 요약 3줄",
-                                    "thumbnail": {
-                                        "imageUrl": "https://imgnews.pstatic.net/image/081/2020/10/07/0003129476_001_20201007151624533.jpg?type=w647"
-                                    },
-                                    "buttons": [
-                                        {
-                                            "action":  "webLink",
-                                            "label": "뉴스기사 보러가기",
-                                            "webLinkUrl": "https://news.naver.com/main/read.nhn?mode=LSD&mid=shm&sid1=100&oid=081&aid=0003129476"
-                                        }
-                                    ]
-                                }
-                            ]
+                            "items": all_data_dict['section_world']
                         }
                     }
                 ]
@@ -342,50 +136,7 @@ def Message():
                     {
                         "carousel": {
                             "type": "basicCard",
-                            "items": [
-                                {
-                                    "title": "뉴스기사 제목",
-                                    "description": "뉴스기사 요약 3줄",
-                                    "thumbnail": {
-                                        "imageUrl": "https://imgnews.pstatic.net/image/081/2020/10/07/0003129476_001_20201007151624533.jpg?type=w647"
-                                    },
-                                    "buttons": [
-                                        {
-                                            "action":  "webLink",
-                                            "label": "뉴스기사 보러가기",
-                                            "webLinkUrl": "https://news.naver.com/main/read.nhn?mode=LSD&mid=shm&sid1=100&oid=081&aid=0003129476"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "title": "뉴스기사 제목",
-                                    "description": "뉴스기사 요약 3줄",
-                                    "thumbnail": {
-                                        "imageUrl": "https://imgnews.pstatic.net/image/081/2020/10/07/0003129476_001_20201007151624533.jpg?type=w647"
-                                    },
-                                    "buttons": [
-                                        {
-                                            "action":  "webLink",
-                                            "label": "뉴스기사 보러가기",
-                                            "webLinkUrl": "https://news.naver.com/main/read.nhn?mode=LSD&mid=shm&sid1=100&oid=081&aid=0003129476"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "title": "뉴스기사 제목",
-                                    "description": "뉴스기사 요약 3줄",
-                                    "thumbnail": {
-                                        "imageUrl": "https://imgnews.pstatic.net/image/081/2020/10/07/0003129476_001_20201007151624533.jpg?type=w647"
-                                    },
-                                    "buttons": [
-                                        {
-                                            "action":  "webLink",
-                                            "label": "뉴스기사 보러가기",
-                                            "webLinkUrl": "https://news.naver.com/main/read.nhn?mode=LSD&mid=shm&sid1=100&oid=081&aid=0003129476"
-                                        }
-                                    ]
-                                }
-                            ]
+                            "items": all_data_dict['section_it']
                         }
                     }
                 ]
