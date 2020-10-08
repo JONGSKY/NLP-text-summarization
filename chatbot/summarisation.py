@@ -209,7 +209,11 @@ def summarise_contents(x):
     ranks = tr.rank()
     return tr.summarize(0.2)
 
-time_objective = f"{datetime.datetime.now().strftime('%Y%m%d-%H')}.csv"
+
+FILE_TIME = datetime.datetime.now().strftime('%Y%m%d-%H')
+time_objective = f"{FILE_TIME}.csv"
+
+print(f"Crawling time : {FILE_TIME}")
 
 DATA_DIR = "chatbot_data"
 FILE_NAME = time_objective
