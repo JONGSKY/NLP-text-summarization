@@ -1,4 +1,4 @@
-# NEWS CHATBOT
+# 💬 NEWS CHATBOT
 
 ### 프로젝트 소개
 
