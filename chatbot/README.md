@@ -2,7 +2,7 @@
 
 #### crawling_data.py
 
-
+[네이버 뉴스](https://news.naver.com/)에서 제공하는 헤드라인뉴스, 정치, 경제, 사회, 생활/문화, 세계, IT/과학 기사 데이터를 가져옵니다.
 
 #### summarization.py
 
