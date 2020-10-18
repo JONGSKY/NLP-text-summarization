@@ -24,7 +24,8 @@ for news_type in news_type_list:
         data_dict['title'] = title
         data_dict['description'] = description
         data_dict['thumbnail'] = {"imageUrl":imageUrl}
-        data_dict['buttons'] = [{"action":  "webLink", "label": "뉴스기사 보러가기", "webLinkUrl": webLinkUrl}]
+        data_dict['buttons'] = [{"action": "message", "label": "3줄 요약보기", "messageText": '.\n'.join(description.split('.'))},
+                                {"action":  "webLink", "label": "뉴스기사 보러가기", "webLinkUrl": webLinkUrl}]   
         
         data_list.append(data_dict)
 
@@ -149,7 +150,7 @@ def Message():
                 "outputs": [
                     {
                         "simpleText": {
-                            "text": "몰라"
+                            "text": "버튼으로 클릭해주세요"
                         }
                     }
                 ]
@@ -159,4 +160,4 @@ def Message():
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=8000)
+    app.run(host='0.0.0.0', port=8080)
