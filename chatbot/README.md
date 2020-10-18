@@ -2,11 +2,17 @@
 
 #### crawling_data.py
 
+
+
 #### summarization.py
 
 #### chatbot.py
 
 #### crontab
+
+1. crawling_data.py 은 하루에 2번 오전6시, 오후6시 2번 실행됩니다.
+2. summarization.py 은 하루에 2번 crawling_data.py 실행 이후 실행됩니다.
+3. chatbot.py 는 하루에 2번 summarization.py 실행 이후 refresh됩니다.
 
 ## Reference site
 
