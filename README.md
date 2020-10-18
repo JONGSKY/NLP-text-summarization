@@ -1,8 +1,8 @@
 # 💬 NEWS CHATBOT
 
-### 프로젝트 소개
+### 프로젝트 소개 
 
-오늘의 뉴스를 빠르게 볼 수 있는 챗봇 개발
+[![Notion Badge](http://img.shields.io/badge/-Introduce-F6F6F6?style=flat-square&logo=notion&logoColor=black&link=https://www.notion.so/jongsky/NLP-Text-Summarization-3c9eea5321f846a28a5efdfa8cdd727d)](https://www.notion.so/jongsky/NLP-Text-Summarization-3c9eea5321f846a28a5efdfa8cdd727d) 오늘의 뉴스를 빠르게 볼 수 있는 챗봇 개발
 
 ## 시간
 - 일주일에 2번 3시간씩 (주당 6시간)
