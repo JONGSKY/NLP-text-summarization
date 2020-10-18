@@ -8,5 +8,5 @@
 
 ### crontab
 
-## 참소 사이트
+## 참고 사이트
 - [kakao i developers - 응답 타입별 JSON 포맷](https://i.kakao.com/docs/skill-response-format#skillpayload)
