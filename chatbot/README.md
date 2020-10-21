@@ -27,3 +27,4 @@
 
 #### Crontab
 - [리눅스 크론탭(Linux Crontab) 사용법](https://jdm.kr/blog/2)
+- [[Linux] Python(.py)을 가상환경(virtualenv)에서 주기별로 실행하기](https://teddylee777.github.io/linux/python-%EA%B0%80%EC%83%81%ED%99%98%EA%B2%BD-crontab-%EC%A3%BC%EA%B8%B0%EB%A7%88%EB%8B%A4-%EC%8B%A4%ED%96%89)
