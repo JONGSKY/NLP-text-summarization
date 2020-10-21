@@ -215,12 +215,13 @@ time_objective = f"{FILE_TIME}.csv"
 
 print(f"Crawling time : {FILE_TIME}")
 
+BASE_DIR = os.getcwd()
 DATA_DIR = "chatbot_data"
 FILE_NAME = time_objective
 FILE_NAME
 
-df = pd.read_csv(os.path.join(DATA_DIR, FILE_NAME))
+df = pd.read_csv(os.path.join(BASE_DIR, DATA_DIR, FILE_NAME))
 df['summarisation'] = df['contents'].map(summarise_contents)
-df.to_csv(os.path.join(DATA_DIR, FILE_NAME), index = False)
+df.to_csv(os.path.join(BASE_DIR, DATA_DIR, FILE_NAME), index = False)
 
 print("Done ! ")

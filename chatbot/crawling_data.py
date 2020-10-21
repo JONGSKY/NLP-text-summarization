@@ -1,14 +1,17 @@
 from selenium import webdriver
 from bs4 import BeautifulSoup
 import datetime
-import time
+import time, os
 import pandas as pd
 import multiprocessing
 import warnings
 
 warnings.filterwarnings(action='ignore') 
 
-web = './chromedriver'
+BASE_DIR = os.getcwd()
+DATA_DIR = "chatbot_data"
+
+web = os.path.join(BASE_DIR, 'chromedriver')
 _url = "https://news.naver.com/"
 news_type_list = ['today_main_news', 'section_politics', 'section_economy', 'section_society','section_life','section_world','section_it']
 
@@ -88,6 +91,7 @@ print("END DATE :", end_time)
 all_data = list(results)
 all_data = pd.concat(all_data).reset_index(drop=True)
 
-all_data.to_csv('chatbot_data/'+start_time.strftime("%Y%m%d-%H")+'.csv', index=False)
+os.path.join(BASE_DIR, DATA_DIR, )
+all_data.to_csv(os.path.join(BASE_DIR, DATA_DIR, start_time.strftime("%Y%m%d-%H")+'.csv'), index=False)
 
 print(start_time.strftime("%Y%m%d-%H")+', '+str(all_data.shape)+', 크롤링을 완료했습니다.')
