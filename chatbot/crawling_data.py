@@ -8,7 +8,8 @@ import warnings
 
 warnings.filterwarnings(action='ignore') 
 
-BASE_DIR = os.getcwd()
+# BASE_DIR = os.getcwd()
+BASE_DIR = "/home/jingsky/workspace/NLP-text-summarization/chatbot/"
 DATA_DIR = "chatbot_data"
 
 web = os.path.join(BASE_DIR, 'chromedriver')
