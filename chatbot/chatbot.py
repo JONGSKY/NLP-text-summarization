@@ -3,6 +3,8 @@ import sys, os
 import datetime
 import pandas as pd
 
+os.system("fuser -k 8080/tcp")
+               
 app = Flask(__name__)
 
 FILE_TIME = datetime.datetime.now().strftime('%Y%m%d-%H')
