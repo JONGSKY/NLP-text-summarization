@@ -215,7 +215,8 @@ time_objective = f"{FILE_TIME}.csv"
 
 print(f"Crawling time : {FILE_TIME}")
 
-BASE_DIR = os.getcwd()
+# BASE_DIR = os.getcwd()
+BASE_DIR = "/home/jingsky/workspace/NLP-text-summarization/chatbot/"
 DATA_DIR = "chatbot_data"
 FILE_NAME = time_objective
 FILE_NAME

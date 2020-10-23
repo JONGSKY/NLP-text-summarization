@@ -8,11 +8,13 @@ app = Flask(__name__)
 FILE_TIME = datetime.datetime.now().strftime('%Y%m%d-%H')
 time_objective = f"{FILE_TIME}.csv"
 
+# BASE_DIR = os.getcwd()
+BASE_DIR = "/home/jingsky/workspace/NLP-text-summarization/chatbot/"
 DATA_DIR = "chatbot_data"
 FILE_NAME = time_objective
 FILE_NAME
 
-data = pd.read_csv(os.path.join(DATA_DIR, FILE_NAME))
+data = pd.read_csv(os.path.join(BASE_DIR, DATA_DIR, FILE_NAME))
 
 news_type_list = ['today_main_news', 'section_politics', 'section_economy', 'section_society','section_life','section_world','section_it']
 

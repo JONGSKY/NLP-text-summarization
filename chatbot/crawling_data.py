@@ -53,7 +53,7 @@ def crawling_news_data(news_type):
         data_list.append(get_news_info_df(news_type))
         driver.back()
 
-        for i in range(1,6):
+        for i in range(1,5):
             driver.find_element_by_xpath('//*[@id="'+news_type+'"]/div[2]/ul/li['+str(i)+']/div[1]/a').click()
             time.sleep(2)
             data_list.append(get_news_info_df(news_type))
@@ -64,7 +64,7 @@ def crawling_news_data(news_type):
         data_list.append(get_news_info_df(news_type))
         driver.back()
 
-        for i in range(1,6):
+        for i in range(1,5):
             driver.find_element_by_xpath('//*[@id="'+news_type+'"]/div[2]/div/ul/li['+str(i)+']/a').click()
             time.sleep(2)
             data_list.append(get_news_info_df(news_type))
