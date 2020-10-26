@@ -21,7 +21,7 @@ def crawling_news_data(news_type):
     def get_news_info_df(news_type):
         title = driver.find_element_by_xpath('//*[@id="articleTitle"]').text
         date = driver.find_element_by_xpath('//*[@id="main_content"]/div[1]/div[3]/div/span[1]').text
-        contents = driver.find_element_by_xpath('//*[@id="articleBodyContents"]').text
+        contents = driver.find_element_by_xpath('//*[@id="articleBodyContents"]').text[:-100]
         image_url = get_poster_url()
         news_url = driver.current_url
         df = pd.DataFrame([news_type, title, date, contents, image_url, news_url]).T
@@ -92,7 +92,6 @@ print("END DATE :", end_time)
 all_data = list(results)
 all_data = pd.concat(all_data).reset_index(drop=True)
 
-os.path.join(BASE_DIR, DATA_DIR, )
 all_data.to_csv(os.path.join(BASE_DIR, DATA_DIR, start_time.strftime("%Y%m%d-%H")+'.csv'), index=False)
 
 print(start_time.strftime("%Y%m%d-%H")+', '+str(all_data.shape)+', 크롤링을 완료했습니다.')
