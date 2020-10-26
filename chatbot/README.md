@@ -12,9 +12,13 @@
 
 #### crontab
 
-1. crawling_data.py 은 하루에 2번 오전6시, 오후6시 2번 실행됩니다.
-2. summarization.py 은 하루에 2번 crawling_data.py 실행 이후 실행됩니다.
-3. chatbot.py 는 하루에 2번 summarization.py 실행 이후 refresh됩니다.
+1. crawling_data.py 은 하루에 8번 3시간 주기로 실행됩니다.
+  - ``` 1 */3 * * * ~/anaconda3/envs/python_3/bin/python ~/workspace/NLP-text-summarization/chatbot/crawling_data.py > ~/workspace/NLP-text-summarization/chatbot/log/crawling_`date "+\%Y-\%m-\%d \%H:\%M:\%S"`.log 2>&1 ```
+2. summarization.py 은 하루에 8번 crawling_data.py 실행 이후 실행됩니다.
+  - ``` 5 */3 * * * ~/anaconda3/envs/python_3/bin/python ~/workspace/NLP-text-summarization/chatbot/summarization.py > ~/workspace/NLP-text-summarization/chatbot/log/summarization_`date "+\%Y-\%m-\%d \%H:\%M:\%S"`.log 2>&1 ```
+3. chatbot.py 는 하루에 8번 summarization.py 실행 이후 refresh됩니다.
+  - ``` 10 */3 * * * ~/anaconda3/envs/python_3/bin/python ~/workspace/NLP-text-summarization/chatbot/chatbot.py > ~/workspace/NLP-text-summarization/chatbot/log/chatbot_`date "+\%Y-\%m-\%d \%H:\%M:\%S"`.log 2>&1 ```
+
 
 ## Reference site
 
