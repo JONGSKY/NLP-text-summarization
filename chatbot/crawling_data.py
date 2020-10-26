@@ -21,6 +21,7 @@ def crawling_news_data(news_type):
     def get_news_info_df(news_type):
         title = driver.find_element_by_xpath('//*[@id="articleTitle"]').text
         date = driver.find_element_by_xpath('//*[@id="main_content"]/div[1]/div[3]/div/span[1]').text
+        news_corp = driver.find_element_by_xpath('//*[@id="main_content"]/div[1]/div[1]/a/img').get_attribute ('alt')
         contents = driver.find_element_by_xpath('//*[@id="articleBodyContents"]').text
         image_url = get_poster_url()
         news_url = driver.current_url
