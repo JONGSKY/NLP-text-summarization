@@ -222,7 +222,8 @@ FILE_NAME = time_objective
 FILE_NAME
 
 df = pd.read_csv(os.path.join(BASE_DIR, DATA_DIR, FILE_NAME))
-df['summarisation'] = df['contents'].map(summarise_contents)
+# df['summarisation'] = df['contents'].map(summarise_contents)
+df['summarisation'] = df['contents'].map(lambda x: (summarise_contents(x)) if len(x) >1000 else "죄송합니다. 기사 내용이 짧아 정확한 요약을 보여드릴 수 없습니다. \n 해당 기사를 보기위해서는 \n 뉴스기사 보러가기를 눌러주세요." )
 df.to_csv(os.path.join(BASE_DIR, DATA_DIR, FILE_NAME), index = False)
 
 print("Done ! ")
