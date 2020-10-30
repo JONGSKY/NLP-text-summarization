@@ -4,43 +4,13 @@
 
 [![Notion Badge](http://img.shields.io/badge/-Introduce-F6F6F6?style=flat-square&logo=notion&logoColor=black&link=https://www.notion.so/jongsky/NLP-Text-Summarization-3c9eea5321f846a28a5efdfa8cdd727d)](https://www.notion.so/jongsky/NLP-Text-Summarization-3c9eea5321f846a28a5efdfa8cdd727d) 오늘의 뉴스를 빠르게 볼 수 있는 챗봇 개발
 
+### 프로젝트 계획
+
+![image](https://user-images.githubusercontent.com/40276516/97671783-4187c700-1acc-11eb-9087-2b127c12a121.png)
+
+
 ## 시간
 - 일주일에 2번 3시간씩 (주당 6시간)
-
-## 계획
-1. 링크 크롤링 (제목, 일자, 신문사 ...)
-2. 링크 크롤링 -> 내용 크롤링
-
--------- 9/18 --------
-
-3. 모델 연구
-  - 관련 연구 알아보기
-  - 코드
-  - 모델링
-  - 학습
-  - 결과
-  
-- 9/28 : 사용할 모델 공부, 텍스트를 넣으면 될 수 있게 코드 베이스라인 작성
-
--------- 9/25 -------- (교수님 피드백 1번)
-
-4. 챗봇 구축
-5. 챗봇 자체 테스트
-6. 챗봇 파이프코드라인
-
--------- 10/9 --------
-
-7. 챗봇 테스팅
-
--------- 10/16 --------
-
-8. 발표자료
-
--------- 10/21 -------- (교수님 피드백 2번)
-
-10. 제출
-
--------- 11/6 --------
 
 ## 정리
   - 관련 실습
