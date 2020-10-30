@@ -20,8 +20,8 @@ news_type_list = ['today_main_news', 'section_politics', 'section_economy', 'sec
 
 def replace_all(text, dic):
     for j in dic.values():
-        result = re.sub(j, '', text)
-    return result
+        text = re.sub(j, '', text)
+    return text
 
 
 
@@ -30,7 +30,8 @@ def preprocessing_div_contents(x):
     "find_reporter" : r"[가-힣]{2,4} ([가-힣])*기자",
     "find_email" : r'[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+',
     "find_things" : r'\[.+?\]',
-    "find_useless_bracket" : r"\( *\)"}
+    "find_useless_bracket" : r"\( *\)",
+     "find_spaces" : r"  +"}
 
     main_contents = ' '.join(str(x).split('\n')[8:-2])
 
@@ -46,7 +47,7 @@ def preprocessing_div_contents(x):
     result = replace_all(final_contents, find_re)
     result = '다.'.join(result.split('다.')[:-1]) + '다.'
 
-    return result
+    return result.strip()
 
 def crawling_news_data(news_type):
     
@@ -86,10 +87,13 @@ def crawling_news_data(news_type):
     driver.get(_url)
     
     if news_type == 'today_main_news':
-        driver.find_element_by_xpath('//*[@id="'+news_type+'"]/div[2]/div/div[1]/a[1]').click()
-        time.sleep(2)
-        data_list.append(get_news_info_df(news_type))
-        driver.back()
+        try:
+            driver.find_element_by_xpath('//*[@id="'+news_type+'"]/div[2]/div/div[1]/a[1]').click()
+            time.sleep(2)
+            data_list.append(get_news_info_df(news_type))
+            driver.back()
+        except:
+            driver.get(_url)
 
         for i in range(1,5):
             driver.find_element_by_xpath('//*[@id="'+news_type+'"]/div[2]/ul/li['+str(i)+']/div[1]/a').click()
@@ -97,10 +101,13 @@ def crawling_news_data(news_type):
             data_list.append(get_news_info_df(news_type))
             driver.back()
     else:
-        driver.find_element_by_xpath('//*[@id="'+news_type+'"]/div[2]/dl/dt/a').click()
-        time.sleep(2)
-        data_list.append(get_news_info_df(news_type))
-        driver.back()
+        try:
+            driver.find_element_by_xpath('//*[@id="'+news_type+'"]/div[2]/dl/dt/a').click()
+            time.sleep(2)
+            data_list.append(get_news_info_df(news_type))
+            driver.back()
+        except:
+            driver.get(_url)
 
         for i in range(1,5):
             driver.find_element_by_xpath('//*[@id="'+news_type+'"]/div[2]/div/ul/li['+str(i)+']/a').click()
