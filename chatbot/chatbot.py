@@ -73,7 +73,7 @@ for news_type in news_type_list:
         data_dict['title'] = title
         data_dict['description'] = description
         data_dict['thumbnail'] = {"imageUrl":imageUrl}
-        data_dict['buttons'] = [{"action": "message", "label": "3줄 요약보기", "messageText": '<기사제목> \n\n' + title + '\n\n <기사3줄요약> \n\n' + '.\n'.join(description.split('.'))},
+        data_dict['buttons'] = [{"action": "message", "label": "기사 요약하기", "messageText": '<기사제목> \n\n' + title + '\n\n <기사 요약> \n\n' + '.\n'.join(description.split('.'))},
                                 {"action":  "webLink", "label": "뉴스기사 보러가기", "webLinkUrl": webLinkUrl}]   
         
         data_list.append(data_dict)
