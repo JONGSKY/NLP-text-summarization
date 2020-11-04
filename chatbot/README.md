@@ -23,7 +23,12 @@
 ## Reference site
 
 #### summarization
-- 모델링 관련 사이트
+- [TextRank 기법을 이용한 핵심 어구 추출 및 텍스트 요약](https://bab2min.tistory.com/552)
+- [‘쉽게 설명한’ 구글의 페이지 랭크 알고리즘](https://sungmooncho.com/2012/08/26/pagerank/)
+- [페이지 랭크 알고리즘(Page Rank Algorithm)](https://medium.com/@dbwodlf3/%ED%8E%98%EC%9D%B4%EC%A7%80-%EB%9E%AD%ED%81%AC-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-page-rank-algorithm-6d83c78fcbd3)
+- [PageRank 알고리즘 이해하기](https://eyeballs.tistory.com/36)
+- [TextRank 를 이용한 키워드 추출과 핵심 문장 추출 (구현과 실험)](https://lovit.github.io/nlp/2019/04/30/textrank/)
+- [페이지랭크 알고리즘(PageRank Algorithm)을 사용하여 웹 사이트의 순위 매기기](https://kr.mathworks.com/help/matlab/math/use-page-rank-algorithm-to-rank-websites.html)
 
 #### chatbot
 - [kakao i developers - 챗봇 주요 기능 사용법](https://i.kakao.com/docs/tutorial-chatbot-key-features#%EC%8B%9C%EB%82%98%EB%A6%AC%EC%98%A4-%EC%95%88%EC%97%90%EC%84%9C-%EB%B8%94%EB%A1%9D-%EB%A7%8C%EB%93%A4%EA%B8%B0)
