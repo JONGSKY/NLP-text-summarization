@@ -14,5 +14,4 @@
 
 #### 결과영상
 
-- [챗봇 시스템 결과영상](
-https://s3.us-west-2.amazonaws.com/secure.notion-static.com/341d5734-4644-478b-b017-678afae027b8/RPReplay_Final1604427556.MP4.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20201104%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20201104T163638Z&X-Amz-Expires=86400&X-Amz-Signature=972a99236a14498db70373ec20c06d36ce871d9e0574d1ca7ac9b21bf306fdd2&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22RPReplay_Final1604427556.MP4.mp4%22)
+- [챗봇 시스템 결과영상](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/71314408-7f39-4bb9-a853-a6f8b67f0674/RPReplay_Final1604427556.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20201109%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20201109T125036Z&X-Amz-Expires=86400&X-Amz-Signature=d8d3067253371295c36614079b1e312b74a9e1fec420b7aab1960e0163778bca&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22RPReplay_Final1604427556.MP4.mp4%22)
