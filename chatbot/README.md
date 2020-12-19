@@ -6,6 +6,8 @@
 
 #### summarization.py
 
+- TextRank 기법을 이용한 텍스트 요약을 통해 전처리된 뉴스 기사를 요약합니다.
+
 #### chatbot.py
 
 - 서버 8080 포트로 카카오 챗봇을 실행시킵니다.
@@ -18,7 +20,6 @@
   - ``` 5 */3 * * * ~/anaconda3/envs/python_3/bin/python ~/workspace/NLP-text-summarization/chatbot/summarization.py > ~/workspace/NLP-text-summarization/chatbot/log/summarization/summarization_`date "+\%Y-\%m-\%d \%H:\%M:\%S"`.log 2>&1 ```
 3. chatbot.py 는 하루에 8번 summarization.py 실행 이후 refresh됩니다.
   - ``` 10 */3 * * * ~/anaconda3/envs/python_3/bin/python ~/workspace/NLP-text-summarization/chatbot/chatbot.py > ~/workspace/NLP-text-summarization/chatbot/log/chatbot/chatbot_`date "+\%Y-\%m-\%d \%H:\%M:\%S"`.log 2>&1 ```
-
 
 ## Reference site
 

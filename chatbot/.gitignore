@@ -1,2 +1,3 @@
 chromedriver
 chatbot_data/*
+*.DS_Store
