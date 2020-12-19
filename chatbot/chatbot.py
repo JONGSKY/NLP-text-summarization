@@ -19,7 +19,6 @@ FILE_NAME
 data = pd.read_csv(os.path.join(BASE_DIR, DATA_DIR, FILE_NAME))
 
 news_type_list = ['today_main_news', 'section_politics', 'section_economy', 'section_society','section_life','section_world','section_it']
-
 all_data_dict = {}
 
 quick_replies = [{

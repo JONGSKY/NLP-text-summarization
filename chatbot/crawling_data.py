@@ -17,13 +17,10 @@ web = os.path.join(BASE_DIR, 'chromedriver')
 _url = "https://news.naver.com/"
 news_type_list = ['today_main_news', 'section_politics', 'section_economy', 'section_society','section_life','section_world','section_it']
 
-
 def replace_all(text, dic):
     for j in dic.values():
         text = re.sub(j, '', text)
     return text
-
-
 
 def preprocessing_div_contents(x):
     find_re = {"find_tag" : r"<[a-zA-z0-9]+",

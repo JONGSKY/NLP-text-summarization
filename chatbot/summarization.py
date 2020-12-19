@@ -1,15 +1,10 @@
 import pandas as pd
 import numpy as np
-import sys
-
+import sys, 
 import os
 import re
-
-
 import datetime 
 import networkx
-
-
 import json
 from konlpy.tag import Komoran
 tagger = Komoran()
