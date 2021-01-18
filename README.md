@@ -16,4 +16,4 @@
 
 ## 프로젝트 결과
 
-<iframe width="640" height="360" src="https://youtu.be/qXHcKsqw4J8" frameborder="0" gesture="media" allowfullscreen=""></iframe>
+[![뉴스기사 챗봇 시연영상](https://img.youtube.com/vi/qXHcKsqw4J8/0.jpg)](https://youtu.be/qXHcKsqw4J)
