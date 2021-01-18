@@ -16,4 +16,4 @@
 
 ## 프로젝트 결과
 
-[![뉴스기사 챗봇 시연영상](https://img.youtube.com/vi/qXHcKsqw4J8/0.jpg)](https://youtu.be/qXHcKsqw4J)
+[![뉴스기사 챗봇 시연영상](https://img.youtube.com/vi/qXHcKsqw4J8/0.jpg)](https://youtu.be/qXHcKsqw4J8)
